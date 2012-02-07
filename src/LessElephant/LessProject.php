@@ -51,23 +51,23 @@ class LessProject
     private $lessBinary;
 
     /**
-     * @var \CompassElephant\CommandCaller
+     * @var \LessElephant\CommandCaller
      */
     private $commandCaller;
 
     /**
-     * @var \CompassElephant\StalenessChecker\StalenessCheckerInterface
+     * @var \LessElephant\StalenessChecker\StalenessCheckerInterface
      */
     private $stalenessChecker;
 
     /**
      * Class constructor
      *
-     * @param string                                    $sourceFolder     the base path where the less files resides
-     * @param string                                    $sourceFile       the less file at the base of your project
-     * @param string                                    $destination      the path to the css file of destination
-     * @param null                                      $name             the project name
-     * @param \LessElephant\LessBinary|null             $lessBinary       a LessBinary instance
+     * @param string                        $sourceFolder the base path where the less files resides
+     * @param string                        $sourceFile   the less file at the base of your project
+     * @param string                        $destination  the path to the css file of destination
+     * @param null                          $name         the project name
+     * @param \LessElephant\LessBinary|null $lessBinary   a LessBinary instance
      *
      * @internal param \CompassElephant\CompassBinary|null $compassBinary a CompassBinary instance
      * @internal param mixed $stalenessChecker a StalenessCheckerInterface instance
@@ -87,6 +87,7 @@ class LessProject
 
         $this->sourceFolder = $sourceFolder;
         $this->sourceFile = $sourceFile;
+        $this->destination = $destination;
 
         if ($lessBinary == null) {
             $lessBinary = new LessBinary();
@@ -116,7 +117,9 @@ class LessProject
     }
 
     /**
-     * @param \CompassElephant\CommandCaller $commandCaller
+     * commandCaller setter
+     *
+     * @param \CompassElephant\CommandCaller $commandCaller CommandCaller instance
      */
     public function setCommandCaller($commandCaller)
     {
@@ -124,6 +127,8 @@ class LessProject
     }
 
     /**
+     * commandCaller getter
+     *
      * @return \CompassElephant\CommandCaller
      */
     public function getCommandCaller()
@@ -132,7 +137,9 @@ class LessProject
     }
 
     /**
-     * @param string $destination
+     * destination setter
+     *
+     * @param string $destination the destination css path
      */
     public function setDestination($destination)
     {
@@ -140,6 +147,8 @@ class LessProject
     }
 
     /**
+     * destinaton getter
+     *
      * @return string
      */
     public function getDestination()
@@ -148,7 +157,9 @@ class LessProject
     }
 
     /**
-     * @param \LessElephant\LessBinary $lessBinary
+     * LessBinary setter
+     *
+     * @param \LessElephant\LessBinary $lessBinary LessBinary instance
      */
     public function setLessBinary($lessBinary)
     {
@@ -156,6 +167,8 @@ class LessProject
     }
 
     /**
+     * LessBinary getter
+     *
      * @return \LessElephant\LessBinary
      */
     public function getLessBinary()
@@ -164,7 +177,9 @@ class LessProject
     }
 
     /**
-     * @param string $name
+     * name setter
+     *
+     * @param string $name the project name
      */
     public function setName($name)
     {
@@ -172,6 +187,8 @@ class LessProject
     }
 
     /**
+     * name getter
+     *
      * @return string
      */
     public function getName()
@@ -180,7 +197,9 @@ class LessProject
     }
 
     /**
-     * @param string $sourceFile
+     * sourceFile setter
+     *
+     * @param string $sourceFile source less file
      */
     public function setSourceFile($sourceFile)
     {
@@ -188,6 +207,8 @@ class LessProject
     }
 
     /**
+     * sourceFile getter
+     *
      * @return string
      */
     public function getSourceFile()
@@ -196,7 +217,9 @@ class LessProject
     }
 
     /**
-     * @param string $sourceFolder
+     * sourceFolder setter
+     *
+     * @param string $sourceFolder the source folder where your less files resides
      */
     public function setSourceFolder($sourceFolder)
     {
@@ -204,6 +227,8 @@ class LessProject
     }
 
     /**
+     * sourceFolder getter
+     *
      * @return string
      */
     public function getSourceFolder()
@@ -212,7 +237,9 @@ class LessProject
     }
 
     /**
-     * @param \CompassElephant\StalenessChecker\StalenessCheckerInterface $stalenessChecker
+     * stalenessChecker setter
+     *
+     * @param \CompassElephant\StalenessChecker\StalenessCheckerInterface $stalenessChecker StalenessCheckerInterface instance
      */
     public function setStalenessChecker($stalenessChecker)
     {
@@ -220,6 +247,8 @@ class LessProject
     }
 
     /**
+     * stalenessChecker getter
+     *
      * @return \CompassElephant\StalenessChecker\StalenessCheckerInterface
      */
     public function getStalenessChecker()

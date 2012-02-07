@@ -31,7 +31,7 @@ class LessProjectTest extends TestCase
     public function testBinary()
     {
         $this->assertTrue($this->lessProject->isClean());
-        $this->writeStyle($this->sourceFile, '
+        $this->writeStyle($this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, '
 @color: #4D926F;
 
 #header {
@@ -57,7 +57,7 @@ h2 {
     public function testDependencies()
     {
         $this->writeStyle($this->depFile, '@color: #FFF;');
-        $this->writeStyle($this->sourceFile, '@import "vars"; a { color: @color; }');
+        $this->writeStyle($this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, '@import "vars"; a { color: @color; }');
         $this->lessProject->compile();
         $this->assertTrue($this->lessProject->isClean());
         $this->writeStyle($this->depFile, '@color: #000');

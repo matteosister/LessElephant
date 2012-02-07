@@ -75,7 +75,7 @@ class CommandCaller
      */
     public function compile()
     {
-        $cmd = sprintf('%s %s %s', $this->binary->getPath(), $this->sourceFile, $this->destination);
+        $cmd = sprintf('%s %s %s', $this->binary->getPath(), $this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, $this->destination);
         $this->execute($cmd);
         return $this;
     }
