@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the CompassElephant package.
+ * This file is part of the LessElephant package.
  *
  * (c) Matteo Giachino <matteog@gmail.com>
  *

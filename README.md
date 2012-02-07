@@ -111,7 +111,7 @@ echo $project->isClean(); // returns true
 
 **Staleness Checker**
 
-Compass checks if the project need to be compiled with the awesome [Symfony Finder](https://github.com/symfony/Finder) component, by scanning your source less folder
+LessElephant checks if the project need to be compiled with the awesome [Symfony Finder](https://github.com/symfony/Finder) component, by scanning your source less folder
 
 Symfony2
 --------
