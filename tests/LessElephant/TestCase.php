@@ -50,7 +50,6 @@ class TestCase extends \PHPUnit_Framework_TestCase
         touch($destination);
         $this->destination = $destination;
         $this->lessProject = new LessProject($this->sourceFolder, $this->sourceFile, $this->destination);
-        var_dump($this->lessProject->getLessBinary());
     }
 
     protected function writeStyle($file, $style)

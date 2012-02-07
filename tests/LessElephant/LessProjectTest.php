@@ -43,6 +43,7 @@ h2 {
 
         $this->assertFalse($this->lessProject->isClean());
         $this->lessProject->compile();
+        var_dump($this->lessProject->getCommandCaller()->getOutput());
         $this->assertTrue($this->lessProject->isClean());
 
         $this->assertEquals('#header {
