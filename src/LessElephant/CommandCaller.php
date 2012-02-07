@@ -77,6 +77,7 @@ class CommandCaller
     {
         $cmd = sprintf('%s %s %s', $this->binary->getPath(), $this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, $this->destination);
         var_dump($cmd);
+        
         $this->execute($cmd);
         return $this;
     }
