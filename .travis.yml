@@ -8,7 +8,6 @@ branches:
     - develop
 
 before_script:
-  - npm install less
   - wget -nc http://getcomposer.org/composer.phar
   - php composer.phar update
 
