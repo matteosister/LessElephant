@@ -34,6 +34,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
 
     public function initProject()
     {
+        exec('npm install less');
         $tempDir = realpath(sys_get_temp_dir()).'less_elephant_'.md5(uniqid(rand(),1));
         $tempName = tempnam($tempDir, 'less_elephant');
         unlink($tempName);
@@ -49,7 +50,8 @@ class TestCase extends \PHPUnit_Framework_TestCase
         $destination = $destFolder.DIRECTORY_SEPARATOR.'main.css';
         touch($destination);
         $this->destination = $destination;
-        $this->lessProject = new LessProject($this->sourceFolder, $this->sourceFile, $this->destination);
+        $binary = new LessBinary(__DIR__.'/../../node_modules/.bin/lessc');
+        $this->lessProject = new LessProject($this->sourceFolder, $this->sourceFile, $this->destination, 'testProject', $binary);
     }
 
     protected function writeStyle($file, $style)
