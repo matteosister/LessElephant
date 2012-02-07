@@ -43,7 +43,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
         mkdir($sourceFolder);
         mkdir($destFolder);
         $this->sourceFolder = $sourceFolder;
-        $sourceFile = $this->sourceFolder.DIRECTORY_SEPARATOR.'main.less';
+        $sourceFile = 'main.less';
         $this->depFile = $this->sourceFolder.DIRECTORY_SEPARATOR.'vars.less';
         $this->sourceFile = $sourceFile;
         $destination = $destFolder.DIRECTORY_SEPARATOR.'main.css';

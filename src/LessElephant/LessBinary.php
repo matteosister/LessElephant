@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the CompassElephant package.
+ * This file is part of the LessElephant package.
  *
  * (c) Matteo Giachino <matteog@gmail.com>
  *
@@ -16,7 +16,7 @@ namespace LessElephant;
 use Symfony\Component\Process\Process;
 
 /**
- * CompassBinary
+ * LessBinary
  *
  * @author Matteo Giachino <matteog@gmail.com>
  */
@@ -24,14 +24,14 @@ use Symfony\Component\Process\Process;
 class LessBinary
 {
     /**
-     * @var null|string the path to the compass executable
+     * @var null|string the path to the lessc executable
      */
     private $path;
 
     /**
      * class constructor
      *
-     * @param null|string $path the path to the compass executable
+     * @param null|string $path the path to the lessc executable
      */
     public function __construct($path = null)
     {
@@ -42,7 +42,7 @@ class LessBinary
     }
 
     /**
-     * Try to find the compass executable
+     * Try to find the lessc executable
      *
      * WARNING: LINUX/UNIX ONLY
      */

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the CompassElephant package.
+ * This file is part of the LessElephant package.
  *
  * (c) Matteo Giachino <matteog@gmail.com>
  *
@@ -18,7 +18,7 @@ LessElephant\StalenessChecker\StalenessCheckerInterface,
 LessElephant\StalenessChecker\FinderStalenessChecker;
 
 /**
- * CompassElephant
+ * LessProject
  *
  * @author Matteo Giachino <matteog@gmail.com>
  */
@@ -51,30 +51,27 @@ class LessProject
     private $lessBinary;
 
     /**
-     * @var \CompassElephant\CommandCaller
+     * @var \LessElephant\CommandCaller
      */
     private $commandCaller;
 
     /**
-     * @var \CompassElephant\StalenessChecker\StalenessCheckerInterface
+     * @var \LessElephant\StalenessChecker\StalenessCheckerInterface
      */
     private $stalenessChecker;
 
     /**
      * Class constructor
      *
-     * @param string                                    $sourceFolder     the base path where the less files resides
-     * @param string                                    $sourceFile       the less file at the base of your project
-     * @param string                                    $destination      the path to the css file of destination
-     * @param null                                      $name             the project name
-     * @param \LessElephant\LessBinary|null             $lessBinary       a LessBinary instance
+     * @param string                        $sourceFolder the base path where the less files resides
+     * @param string                        $sourceFile   the less file at the base of your project
+     * @param string                        $destination  the path to the css file of destination
+     * @param null                          $name         the project name
+     * @param \LessElephant\LessBinary|null $lessBinary   a LessBinary instance
      *
-     * @internal param \CompassElephant\CompassBinary|null $compassBinary a CompassBinary instance
+     * @internal param \LessElephant\LessBinary|null $lessBinary a LessBinary instance
      * @internal param mixed $stalenessChecker a StalenessCheckerInterface instance
-     * @internal param string $configFile the compass config file name
-     * @internal param bool $autoInit whether to call init() on an empty folder project
-     *
-     * @internal param \CompassElephant\CommandCaller $commandCaller a CommandCaller instance
+     * @internal param \LessElephant\CommandCaller $commandCaller a CommandCaller instance
      */
     public function __construct($sourceFolder, $sourceFile, $destination, $name = null, LessBinary $lessBinary = null)
     {
@@ -87,6 +84,7 @@ class LessProject
 
         $this->sourceFolder = $sourceFolder;
         $this->sourceFile = $sourceFile;
+        $this->destination = $destination;
 
         if ($lessBinary == null) {
             $lessBinary = new LessBinary();
@@ -116,7 +114,9 @@ class LessProject
     }
 
     /**
-     * @param \CompassElephant\CommandCaller $commandCaller
+     * commandCaller setter
+     *
+     * @param \LessElephant\CommandCaller $commandCaller CommandCaller instance
      */
     public function setCommandCaller($commandCaller)
     {
@@ -124,7 +124,9 @@ class LessProject
     }
 
     /**
-     * @return \CompassElephant\CommandCaller
+     * commandCaller getter
+     *
+     * @return \LessElephant\CommandCaller
      */
     public function getCommandCaller()
     {
@@ -132,7 +134,9 @@ class LessProject
     }
 
     /**
-     * @param string $destination
+     * destination setter
+     *
+     * @param string $destination the destination css path
      */
     public function setDestination($destination)
     {
@@ -140,6 +144,8 @@ class LessProject
     }
 
     /**
+     * destinaton getter
+     *
      * @return string
      */
     public function getDestination()
@@ -148,7 +154,9 @@ class LessProject
     }
 
     /**
-     * @param \LessElephant\LessBinary $lessBinary
+     * LessBinary setter
+     *
+     * @param \LessElephant\LessBinary $lessBinary LessBinary instance
      */
     public function setLessBinary($lessBinary)
     {
@@ -156,6 +164,8 @@ class LessProject
     }
 
     /**
+     * LessBinary getter
+     *
      * @return \LessElephant\LessBinary
      */
     public function getLessBinary()
@@ -164,7 +174,9 @@ class LessProject
     }
 
     /**
-     * @param string $name
+     * name setter
+     *
+     * @param string $name the project name
      */
     public function setName($name)
     {
@@ -172,6 +184,8 @@ class LessProject
     }
 
     /**
+     * name getter
+     *
      * @return string
      */
     public function getName()
@@ -180,7 +194,9 @@ class LessProject
     }
 
     /**
-     * @param string $sourceFile
+     * sourceFile setter
+     *
+     * @param string $sourceFile source less file
      */
     public function setSourceFile($sourceFile)
     {
@@ -188,6 +204,8 @@ class LessProject
     }
 
     /**
+     * sourceFile getter
+     *
      * @return string
      */
     public function getSourceFile()
@@ -196,7 +214,9 @@ class LessProject
     }
 
     /**
-     * @param string $sourceFolder
+     * sourceFolder setter
+     *
+     * @param string $sourceFolder the source folder where your less files resides
      */
     public function setSourceFolder($sourceFolder)
     {
@@ -204,6 +224,8 @@ class LessProject
     }
 
     /**
+     * sourceFolder getter
+     *
      * @return string
      */
     public function getSourceFolder()
@@ -212,7 +234,9 @@ class LessProject
     }
 
     /**
-     * @param \CompassElephant\StalenessChecker\StalenessCheckerInterface $stalenessChecker
+     * stalenessChecker setter
+     *
+     * @param \LessElephant\StalenessChecker\StalenessCheckerInterface $stalenessChecker StalenessCheckerInterface instance
      */
     public function setStalenessChecker($stalenessChecker)
     {
@@ -220,7 +244,9 @@ class LessProject
     }
 
     /**
-     * @return \CompassElephant\StalenessChecker\StalenessCheckerInterface
+     * stalenessChecker getter
+     *
+     * @return \LessElephant\StalenessChecker\StalenessCheckerInterface
      */
     public function getStalenessChecker()
     {
