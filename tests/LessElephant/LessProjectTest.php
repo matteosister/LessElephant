@@ -31,7 +31,6 @@ class LessProjectTest extends TestCase
     public function testBinary()
     {
         $this->assertTrue($this->lessProject->isClean());
-        var_dump($this->sourceFolder);
         $this->writeStyle($this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, '
 @color: #4D926F;
 
