@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the CompassElephant package.
+ * This file is part of the LessElephant package.
  *
  * (c) Matteo Giachino <matteog@gmail.com>
  *
@@ -18,7 +18,7 @@ LessElephant\StalenessChecker\StalenessCheckerInterface,
 LessElephant\StalenessChecker\FinderStalenessChecker;
 
 /**
- * CompassElephant
+ * LessProject
  *
  * @author Matteo Giachino <matteog@gmail.com>
  */
@@ -69,12 +69,9 @@ class LessProject
      * @param null                          $name         the project name
      * @param \LessElephant\LessBinary|null $lessBinary   a LessBinary instance
      *
-     * @internal param \CompassElephant\CompassBinary|null $compassBinary a CompassBinary instance
+     * @internal param \LessElephant\LessBinary|null $lessBinary a LessBinary instance
      * @internal param mixed $stalenessChecker a StalenessCheckerInterface instance
-     * @internal param string $configFile the compass config file name
-     * @internal param bool $autoInit whether to call init() on an empty folder project
-     *
-     * @internal param \CompassElephant\CommandCaller $commandCaller a CommandCaller instance
+     * @internal param \LessElephant\CommandCaller $commandCaller a CommandCaller instance
      */
     public function __construct($sourceFolder, $sourceFile, $destination, $name = null, LessBinary $lessBinary = null)
     {
@@ -119,7 +116,7 @@ class LessProject
     /**
      * commandCaller setter
      *
-     * @param \CompassElephant\CommandCaller $commandCaller CommandCaller instance
+     * @param \LessElephant\CommandCaller $commandCaller CommandCaller instance
      */
     public function setCommandCaller($commandCaller)
     {
@@ -129,7 +126,7 @@ class LessProject
     /**
      * commandCaller getter
      *
-     * @return \CompassElephant\CommandCaller
+     * @return \LessElephant\CommandCaller
      */
     public function getCommandCaller()
     {
@@ -239,7 +236,7 @@ class LessProject
     /**
      * stalenessChecker setter
      *
-     * @param \CompassElephant\StalenessChecker\StalenessCheckerInterface $stalenessChecker StalenessCheckerInterface instance
+     * @param \LessElephant\StalenessChecker\StalenessCheckerInterface $stalenessChecker StalenessCheckerInterface instance
      */
     public function setStalenessChecker($stalenessChecker)
     {
@@ -249,7 +246,7 @@ class LessProject
     /**
      * stalenessChecker getter
      *
-     * @return \CompassElephant\StalenessChecker\StalenessCheckerInterface
+     * @return \LessElephant\StalenessChecker\StalenessCheckerInterface
      */
     public function getStalenessChecker()
     {
