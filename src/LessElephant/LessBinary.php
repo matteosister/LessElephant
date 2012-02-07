@@ -35,7 +35,7 @@ class LessBinary
      */
     public function __construct($path = null)
     {
-        $this->path = $path;
+        $this->path = realpath($path);
         if ($path == null) {
             $this->tryToFindLessExecutable();
         }
