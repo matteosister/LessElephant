@@ -1,4 +1,4 @@
-# LessElephant ![Travis build status](https://secure.travis-ci.org/matteosister/CompassElephant.png)#
+# LessElephant ![Travis build status](https://secure.travis-ci.org/matteosister/LessElephant.png)#
 
 A wrapper for the less binary written in PHP
 
