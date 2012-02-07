@@ -1,0 +1,15 @@
+language: php
+phps:
+  - 5.3
+  - 5.4
+branches:
+  only:
+    - master
+    - develop
+
+before_script:
+  - npm install less
+  - wget -nc http://getcomposer.org/composer.phar
+  - php composer.phar update
+
+script: phpunit
