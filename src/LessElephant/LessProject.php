@@ -76,7 +76,11 @@ class LessProject
     public function __construct($sourceFolder, $sourceFile, $destination, $name = null, LessBinary $lessBinary = null)
     {
         if (!is_file($destination)) {
-            throw new \InvalidArgumentException(sprintf('The destination given (%s) is not a file', $destination));
+            try {
+                touch($destination);
+            } catch (\Exception $e) {
+                throw new \InvalidArgumentException(sprintf('LessElephant is unable to create the given destination css. Error: %s', $e->getMessage()));
+            }
         }
         if (!is_writable($destination)) {
             throw new \InvalidArgumentException(sprintf('LessElephant is not able to write in the given path %s', $destination));
