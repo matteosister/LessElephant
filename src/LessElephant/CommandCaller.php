@@ -59,9 +59,9 @@ class CommandCaller
      */
     public function __construct($sourceFolder, $sourceFile, $destination, LessBinary $binary = null)
     {
-        $this->sourceFolder = $sourceFolder;
+        $this->sourceFolder = realpath($sourceFolder);
         $this->sourceFile = $sourceFile;
-        $this->destination = $destination;
+        $this->destination = realpath($destination);
         if ($binary == null) {
             $binary = new LessBinary();
         }
@@ -75,7 +75,7 @@ class CommandCaller
      */
     public function compile()
     {
-        $cmd = sprintf('%s %s %s', $this->binary->getPath(), $this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, $this->destination);
+        $cmd = sprintf('%s %s > %s', $this->binary->getPath(), $this->sourceFolder.DIRECTORY_SEPARATOR.$this->sourceFile, $this->destination);
         $this->execute($cmd);
         return $this;
     }
@@ -87,8 +87,11 @@ class CommandCaller
      */
     private function execute($cmd)
     {
-        $process = new Process(escapeshellcmd($cmd), $this->sourceFolder);
+        $process = new Process($cmd, $this->sourceFolder);
         $process->run();
+        if (!$process->isSuccessful()) {
+            throw new \RuntimeException($process->getErrorOutput());
+        }
         $this->output = trim($process->getOutput(), PHP_EOL);
     }
 
