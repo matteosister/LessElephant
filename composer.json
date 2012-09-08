@@ -3,7 +3,7 @@
     "description": "A library to manage a less project with PHP",
     "keywords": ["less", "css"],
     "homepage": "http://matteosister.github.com/LessElephant",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "license": "GPL3",
     "authors": [
         {
@@ -13,8 +13,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/process": ">=2.0.0",
-        "symfony/finder": ">=2.0.0"
+        "symfony/process": "<2.2.0",
+        "symfony/finder": "<2.2.0"
     },
     "autoload": {
         "psr-0": {
