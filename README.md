@@ -28,7 +28,7 @@ To install LessElephant with composer you simply need to create a *composer.json
 ``` json
 {
     "require": {
-        "cypresslab/less-elephant": ">=0.0.1"
+        "cypresslab/less-elephant": "<=1.0.0"
     }
 }
 ```
