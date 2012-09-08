@@ -13,8 +13,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/process": "2.0.*@stable",
-        "symfony/finder": "2.0.*@stable"
+        "symfony/process": "<2.2.0",
+        "symfony/finder": "<2.2.0"
     },
     "autoload": {
         "psr-0": {

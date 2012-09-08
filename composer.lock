@@ -1,26 +1,21 @@
 {
-    "hash": "d48c2f8530a1e04616f1007e1eaebf7b",
+    "hash": "ddb474c62a3fdb76e15fab67c5b4bb61",
     "packages": [
         {
             "package": "symfony/finder",
-            "version": "2.0.x-dev",
-            "source-reference": "v2.0.15",
-            "commit-date": "1337362678"
+            "version": "v2.1.0"
         },
         {
             "package": "symfony/process",
-            "version": "2.0.x-dev",
-            "source-reference": "cfeeff8ab95b41905c8c19a63d5d11502ce9b309",
-            "commit-date": "1337530510"
+            "version": "v2.1.0"
         }
     ],
     "packages-dev": null,
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "symfony/process": 0,
-        "symfony/finder": 0
-    }
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
 }
