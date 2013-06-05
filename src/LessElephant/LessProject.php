@@ -89,6 +89,7 @@ class LessProject
         $this->sourceFolder = $sourceFolder;
         $this->sourceFile = $sourceFile;
         $this->destination = $destination;
+        $this->name = $name;
 
         if ($lessBinary == null) {
             $lessBinary = new LessBinary();
