@@ -13,8 +13,11 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/process": "<2.2.0",
-        "symfony/finder": "<2.2.0"
+        "symfony/process": ">=2.0,<2.4-dev",
+        "symfony/finder": ">=2.0,<2.4-dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
     },
     "autoload": {
         "psr-0": {
