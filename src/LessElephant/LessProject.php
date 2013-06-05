@@ -77,7 +77,7 @@ class LessProject
     {
         if (!is_file($destination)) {
             try {
-                touch($destination);
+                touch($destination, 0);
             } catch (\Exception $e) {
                 throw new \InvalidArgumentException(sprintf('LessElephant is unable to create the given destination css. Error: %s', $e->getMessage()));
             }
