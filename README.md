@@ -116,4 +116,4 @@ LessElephant checks if the project need to be compiled with the awesome [Symfony
 Symfony2
 --------
 
-[AssetsElephantBundle](https://github.com/matteosister/AssetsElephantBundle) let symfony do the work for you
+[LessElephantBundle](https://github.com/matteosister/LessElephantBundle) let symfony do the work for you
